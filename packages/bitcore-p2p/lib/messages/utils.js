@@ -34,11 +34,12 @@ module.exports = utils = {
   },
   writeAddr: function writeAddr(addr, bw) {
     if (_.isUndefined(addr)) {
-      var pad = new Buffer(Array(26));
+      var pad = new Buffer(Array(30));
       bw.write(pad);
       return;
     }
-
+    const tm = new Date();
+    bw.writeUint32(tm.getTime());
     bw.writeUInt64LEBN(addr.services);
     utils.writeIP(addr.ip, bw);
     bw.writeUInt16BE(addr.port);
@@ -69,6 +70,7 @@ module.exports = utils = {
     };
   },
   parseAddr: function parseAddr(parser) {
+    parser.readUInt32BE();
     var services = parser.readUInt64LEBN();
     var ip = utils.parseIP(parser);
     var port = parser.readUInt16BE();

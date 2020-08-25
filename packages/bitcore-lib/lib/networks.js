@@ -139,22 +139,22 @@ function removeNetwork(network) {
 addNetwork({
   name: 'livenet',
   alias: 'mainnet',
-  pubkeyhash: 0x00,
-  privatekey: 0x80,
-  scripthash: 0x05,
+  pubkeyhash: 0x52, // 82
+  privatekey: 0xd2, // 210
+  scripthash: 0x07, // 7
   bech32prefix: 'bc',
   xpubkey: 0x0488b21e,
   xprivkey: 0x0488ade4,
-  networkMagic: 0xf9beb4d9,
-  port: 8333,
+  networkMagic: 0xe3d9fef1,
+  port: 8168,
   dnsSeeds: [
-    'seed.bitcoin.sipa.be',
-    'dnsseed.bluematt.me',
-    'dnsseed.bitcoin.dashjr.org',
-    'seed.bitcoinstats.com',
-    'seed.bitnodes.io',
-    'bitseed.xf2.org'
-  ]
+    'sf1.zcoin.io',
+    'sf2.zcoin.io',
+    'london.zcoin.io',
+    'singapore.zcoin.io',
+    'nyc.zcoin.io',
+  ],
+  firstHalving: 117564
 });
 
 /**
@@ -166,16 +166,13 @@ var livenet = get('livenet');
 addNetwork({
   name: 'testnet',
   alias: 'test',
-  pubkeyhash: 0x41,
-  privatekey: 0xb9,
-  scripthash: 0xb2,
-  bech32prefix: 'tb',
+  pubkeyhash: 0x41, // 65
+  privatekey: 0xb9, // 185
+  scripthash: 0xb2, // 178
   xpubkey: 0x043587cf,
   xprivkey: 0x04358394,
-  networkMagic: 0xcffcbeea,
   port: 18168,
-  dnsSeeds: [ 
-  ]
+  firstHalving: 420
 });
 
 /**
