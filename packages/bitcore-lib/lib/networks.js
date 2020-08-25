@@ -171,6 +171,7 @@ addNetwork({
   scripthash: 0xb2, // 178
   xpubkey: 0x043587cf,
   xprivkey: 0x04358394,
+  networkMagic: 0xcffcbeea,
   port: 18168,
   firstHalving: 420
 });
